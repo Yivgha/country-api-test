@@ -3,7 +3,7 @@ interface Country {
   countryCode: string;
 }
 
-interface CountryInfo {
+interface CountryInfoType {
   commonName: string;
   officialName: string;
   countryCode: string;
@@ -17,5 +17,31 @@ interface NoInfoAboutProps {
   text: string;
 }
 
-export { Country, CountryInfo, NoInfoAboutProps };
+interface PaginationProps {
+  currentPage: number;
+  totalPages: number;
+  onNext: () => void;
+  onPrevious: () => void;
+}
+
+interface CountryInfoProps {
+  countryInfo: CountryInfoType;
+  populationChartData: {
+    labels: (string | number)[];
+    datasets: {
+      label: string;
+      data: number[];
+      borderColor: string;
+      backgroundColor: string;
+    }[];
+  };
+}
+
+export {
+  Country,
+  CountryInfoType,
+  NoInfoAboutProps,
+  PaginationProps,
+  CountryInfoProps,
+};
 

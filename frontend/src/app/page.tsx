@@ -1,9 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import { Country } from './types/interfaces';
+import { Country } from '@/app/types/interfaces';
 import Loading from '@/components/Loading';
+import Pagination from '@/components/Pagination';
+import CountryCard from '@/components/CountryCard';
 
 const ITEMS_PER_PAGE = 20;
 
@@ -62,41 +63,16 @@ export default function Home() {
         <>
           <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
             {currentCountries.map((country) => (
-              <div
-                key={country.countryCode}
-                className='bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105'
-              >
-                <Link href={`/countries/${country.countryCode}`}>
-                  <div className='p-6'>
-                    <h2 className='text-lg font-bold text-gray-800'>
-                      {country.name}
-                    </h2>
-                    <p className='text-gray-600'>Code: {country.countryCode}</p>
-                  </div>
-                </Link>
-              </div>
+              <CountryCard key={country.countryCode} country={country} />
             ))}
           </div>
 
-          <div className='flex justify-center mt-4 gap-3'>
-            <button
-              onClick={handlePreviousPage}
-              disabled={currentPage === 1}
-              className='bg-blue-600 text-white w-32 px-4 py-2 rounded disabled:opacity-50'
-            >
-              Previous
-            </button>
-            <span className='self-center'>
-              Page {currentPage} of {totalPages}
-            </span>
-            <button
-              onClick={handleNextPage}
-              disabled={currentPage === totalPages}
-              className='bg-blue-600 text-white w-32 px-4 py-2 rounded disabled:opacity-50'
-            >
-              Next
-            </button>
-          </div>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onNext={handleNextPage}
+            onPrevious={handlePreviousPage}
+          />
         </>
       )}
     </div>
