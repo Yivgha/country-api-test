@@ -75,4 +75,3 @@ countryRouter.get('/:countryCode', async (req: Request, res: Response) => {
 });
 
 export default countryRouter;
-

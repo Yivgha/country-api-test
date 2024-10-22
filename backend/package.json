@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsc",
     "start": "nodemon src/server.ts",
-    "dev": "nodemon src/server.ts"
+    "dev": "nodemon src/server.ts",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
