@@ -54,14 +54,14 @@ export default function Home() {
   };
 
   return (
-    <div className='container mx-auto p-4'>
-      <h1 className='text-3xl font-bold mb-6 text-center'>Countries API</h1>
+    <div className="container mx-auto p-4">
+      <h1 className="text-3xl font-bold mb-6 text-center">Countries API</h1>
 
       {isLoading ? (
         <Loading />
       ) : (
         <>
-          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {currentCountries.map((country) => (
               <CountryCard key={country.countryCode} country={country} />
             ))}
@@ -78,4 +78,3 @@ export default function Home() {
     </div>
   );
 }
-

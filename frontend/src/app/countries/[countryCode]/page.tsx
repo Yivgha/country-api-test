@@ -46,9 +46,9 @@ const CountryInfoPage = () => {
   };
 
   return (
-    <div className='p-6 w-full mx-auto'>
+    <div className="p-6 w-full mx-auto">
       <button
-        className='mb-4 px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700 transition'
+        className="mb-4 px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700 transition"
         onClick={() => router.push('/')}
       >
         Go to Country List
@@ -69,4 +69,3 @@ const CountryInfoPage = () => {
 };
 
 export default CountryInfoPage;
-

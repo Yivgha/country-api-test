@@ -15,4 +15,3 @@ export async function GET(req: Request) {
   const data = await response.json();
   return NextResponse.json(data);
 }
-

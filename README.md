@@ -56,6 +56,7 @@ Once the server started, you will see the message in terminal. After this open n
 ```sh
 cd frontend
 npm install
+npm run build
 npm run start
 ```
 
