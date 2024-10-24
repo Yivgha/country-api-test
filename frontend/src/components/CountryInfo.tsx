@@ -31,6 +31,7 @@ const CountryInfo: React.FC<CountryInfoProps> = ({
   populationChartData,
 }) => {
   const router = useRouter();
+
   return (
     <div className="bg-white shadow-md rounded-lg p-6">
       <h1 className="text-2xl font-bold mb-2">{countryInfo.commonName}</h1>

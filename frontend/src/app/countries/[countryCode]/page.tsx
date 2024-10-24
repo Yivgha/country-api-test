@@ -1,14 +1,14 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import CountryInfo from '@/components/CountryInfo';
 import Loading from '@/components/Loading';
 import { CountryInfoType } from '@/app/types/interfaces';
+import GoToCountryListButton from '@/components/GoToCountryListButton';
 
 const CountryInfoPage = () => {
   const { countryCode } = useParams();
-  const router = useRouter();
   const [countryInfo, setCountryInfo] = useState<CountryInfoType | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -47,12 +47,7 @@ const CountryInfoPage = () => {
 
   return (
     <div className="p-6 w-full mx-auto">
-      <button
-        className="mb-4 px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700 transition"
-        onClick={() => router.push('/')}
-      >
-        Go to Country List
-      </button>
+      <GoToCountryListButton />
 
       {loading ? (
         <Loading />
